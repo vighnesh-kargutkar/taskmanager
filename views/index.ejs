@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Task Manager</title>
+    <script src="https://kit.fontawesome.com/5081c8a43f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="box">
+        <h1>Task Manager</h1>
+        <br>
+        <form action="/api/v1/tasks" method="post">
+            <input
+              type="search"
+              name="name"
+              id="search"
+              placeholder="  Enter your task"
+            />
+            <button id="sbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          <div>
+            <table id="table">
+              <% task.forEach(function(name){ %>
+                <tr>
+                <form action="/api/v1/tasks/gud" method="post">
+                  <input
+                    type="text"
+                    name="id"
+                    id="fees"
+                    value="<%= name._id %>"
+                     style="display: none;" 
+                  />
+                    <td id="td1">
+                      <h3 class="search"><%= name.name %></p>
+                    </td>
+                    <td id="td2">
+                      <button id="dbtn"><i class="fa-solid fa-trash-can"></i></button></form>
+                    </td>
+                </tr>
+                <% })%>
+              </table>
+            </div>
+    </div>
+    <div>
+      <% if(typeof alert != 'undefined') { %> <% alert.forEach(function(error)
+        {%> <%= error.msg %> <% }) %> <% } %>
+    </div>
+</body>
+</html>
